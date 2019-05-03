@@ -4,13 +4,10 @@ class_name Actor
 
 export(float) var maxHealth
 var _health
-var _selected = false setget selectedSetter
+
 var _isDead = false
 var hpsprite
 var hpbgsprite
-
-func selectedSetter(value):
-	_selected = value
 
 onready var level = get_node('/root/Level')
 
@@ -30,7 +27,6 @@ func _ready():
 	hpbgsprite.modulate = Color(1, 0, 0)
 	
 	add_child(hpbgsprite)
-	connect('input_event', self, 'handleInput')
 	
 """func _physics_process(delta: float) -> void:
 	for area in get_overlapping_areas():
@@ -56,20 +52,7 @@ func die():
 	for i in range(randi()%10 + 4):
 		level.add_child(Gib.new(self.global_position))
 	queue_free()
-	
-func clicked(mode):
-	if mode == 0:
-		self._selected = true
-		
-func _unhandled_input(event: InputEvent) -> void:
-	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
-		self._selected = false
-	
-func handleInput( viewport, event, shape_idx ):
-	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
-		clicked(level.get_node('Camera/ClickOptions').mode)
-		#get_tree().set_input_as_handled()
-		
+
 class DamageText extends Label:
 	
 	var speed = 100 + randi()%50

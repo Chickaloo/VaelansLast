@@ -4,6 +4,7 @@ class_name PlayerBase
 
 var _workerActive = false
 var _workerSpawnTimer
+var _selectionOpen = false
 
 export(float) var workerSpawnTime
 export(String, FILE, '*.tscn') var unitSelector
@@ -13,6 +14,14 @@ func _ready():
 	var x = Level
 	add_to_group(Level.PLAYER_GROUP)
 	add_to_group(Level.PLAYER_BASE_GROUP)
+	connect('input_event', self, '_input_event')
+	
+func _input_event( viewport, event, shape_idx ):
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+		if not _selectionOpen:
+			if level.get_node('Camera/ClickOptions').mode == ClickOptions.SELECTION:
+				_selectionOpen = true
+				startSpawnSelection()
 
 #opens up selection of availible units based on unit list
 func startSpawnSelection():

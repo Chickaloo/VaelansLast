@@ -54,12 +54,11 @@ func setInitialPosition(position):
 	self.position = position
 	for unit in _units:
 		unit.translate(position)
-		
-func selectedSetter(value):
+
+func clicked():
 	for unit in _units:
-		unit._selected = value
-	_selected = value
-	upgrade()
+		unit._selected = true
+	#upgrade()
 
 func upgrade():
 	if _level < len(upgradeCosts):

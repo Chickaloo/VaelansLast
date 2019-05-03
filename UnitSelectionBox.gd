@@ -17,6 +17,7 @@ func clicked( viewport, event, shape_idx ):
 	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
 		if _active:
 			get_parent().selected(unit)
+			get_parent()._closeTimer = -1
 		
 func _process(delta: float) -> void:
 	if get_node('/root/Level').playerGold < int(unitCost):
