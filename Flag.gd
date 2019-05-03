@@ -20,7 +20,7 @@ func clicked( viewport, event, shape_idx ):
 		get_tree().change_scene(level)
 		
 func _mouse_enter():
-		hover()
+	hover()
 
 func _mouse_exit():
 	unhover()

@@ -114,6 +114,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif $Camera/ClickOptions.mode == ClickOptions.BUILDING:
 			var buildSite = spawn('res://BuildSite.tscn')
 			buildSite.position = event.position
+		elif $Camera/ClickOptions.mode == ClickOptions.SELECTION:
+			add_child(SelectionField.new())
 			
 func baseDestroyed(base):
 	if PLAYER_BASE_GROUP in base.get_groups():

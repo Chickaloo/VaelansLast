@@ -51,7 +51,7 @@ func die():
 	
 	for i in range(randi()%10 + 4):
 		level.add_child(Gib.new(self.global_position))
-	queue_free()
+	call_deferred("queue_free")
 
 class DamageText extends Label:
 	

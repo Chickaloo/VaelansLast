@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	delta *= get_node('/root/Level').gameSpeed
 	duration -= delta
 	if duration <= 0:
-		queue_free()
+		call_deferred("queue_free")
 	move_local_x(speed * delta)
 	for area in inside:
 		hit(area)
@@ -46,4 +46,4 @@ func _process(delta: float) -> void:
 func hit(area):
 	if searchGroup in area.get_groups():
 		area.getHit(self)
-		queue_free()
+		call_deferred("queue_free")
