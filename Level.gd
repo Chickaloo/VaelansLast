@@ -10,10 +10,18 @@ const BUILD_SITE_GROUP = 'buildSite'
 const GROUP_UNIT_GROUP = 'groupUnit'
 
 var Dialogue = preload("res://dialogue/Dialogue.tscn")
+var Results = preload("res://ResultsScreen.tscn")
+var clock
 
 export(String, FILE, '*.tscn') var openingDialogue
 export(String, FILE, '*.tscn') var losingDialogue
 export(String, FILE, '*.tscn') var winningDialogue
+
+export(int) var maxtime
+export(int) var bronzetimethreshold
+export(int) var silvertimethreshold
+export(int) var goldtimethreshold
+export(int) var levelid
 
 export(int) var playerGold
 var tileGrid
@@ -23,6 +31,9 @@ var enemyBaseCount
 
 var gameSpeed = 1
 var opendialogue
+
+var time_start = 0
+var time_now = 0
 
 var A = AStar.new()
 
@@ -64,6 +75,7 @@ func navigate(node, dest, speed = 1.0):
 	return Vector2(direction.x, direction.y).clamped(speed)
 
 func _ready():
+	time_start = OS.get_unix_time()
 	opendialogue = Dialogue.instance()
 	opendialogue.dialogue = Dialogues.TutorialText
 	add_child(opendialogue)
@@ -75,7 +87,9 @@ func _ready():
 		#spawn('res://Tank//PlayerTank.tscn').position = Vector2(100, 100)
 		spawn('res://Archer//PlayerArcher.tscn').position = Vector2(300, 300)
 		#spawn('res://EnemyTank.tscn').position = Vector2(200, 200)
-		
+	
+	clock = get_child(1)
+
 	
 func spawn(scenePath):
 	var scene = load(scenePath)
@@ -113,6 +127,8 @@ func baseDestroyed(base):
 	else:
 		enemyBaseCount -= 1
 		if enemyBaseCount == 0:
-			return
-			#winning dialoge scene needs to pause the game, and unpause when done
-			spawn(winningDialogue)
+			time_now = OS.get_unix_time()
+			var results = Results.instance()
+			results.set_values(time_now-time_start, playerGold, bronzetimethreshold, silvertimethreshold, goldtimethreshold, maxtime, levelid)
+			add_child(results)
+			

@@ -62,6 +62,10 @@ resource_local_to_scene = true
 openingDialogue = "res://Archer/PlayerArcher.tscn"
 losingDialogue = "res://Worker.tscn"
 winningDialogue = "res://Tank/PlayerTank.tscn"
+maxtime = 600
+bronzetimethreshold = 120
+silvertimethreshold = 90
+goldtimethreshold = 60
 playerGold = 100
 
 [node name="TileMap" parent="." index="0"]

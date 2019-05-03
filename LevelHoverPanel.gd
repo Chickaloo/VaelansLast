@@ -40,8 +40,12 @@ func set_level(level):
 		Star3.modulate = Color(2,2,2)
 		
 	StageNameLabel.text = "Stage " + str(level+1)
-	HighScoreLabel.text = "Highscore: " + str(pd.missionScores[level])
-	#BestTimeLabel.text = "Best Time: " + str(pd.missionTimes[level])
+	var time = pd.missionTimes[level]
+	var minutes = time / 60
+	var seconds = time % 60
+	var score = "Best Time: %02d : %02d" % [minutes, seconds]
+	HighScoreLabel.text = "Highscore: " + str(int(pd.missionScores[level]))
+	BestTimeLabel.text = score
 	LevelDescriptionLabel.text = pd.stageDescriptions[level]
 	
 func _process(delta):

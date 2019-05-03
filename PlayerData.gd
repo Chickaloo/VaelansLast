@@ -2,6 +2,7 @@ extends Node
 
 var missionUnlocked
 var missionScores
+var missionTimes
 var missionStars
 
 var skillsEquipped
@@ -12,6 +13,7 @@ var unitLevels
 
 var volumeLevel
 var starts
+var stars
 
 var dialogues
 
@@ -22,10 +24,9 @@ var stageDescriptions = [
 ]
 
 func _ready():
+	newGame()
+	writeSaveData()
 	loadSaveData()
-	print(starts)
-	missionStars[2] = 1
-	missionStars[1] = 1
 	starts += 1
 	writeSaveData()
 
@@ -38,8 +39,9 @@ func _ready():
 		filepath - string containing the path to savefile
 """
 func newGame():
-	missionUnlocked = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	missionUnlocked = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	missionScores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	missionTimes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	missionStars = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 	skillsEquipped = []
@@ -50,8 +52,9 @@ func newGame():
 	
 	volumeLevel = 10
 	starts = 0
+	stars = 0
 	
-	dialogues = [0]
+	dialogues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 func loadSaveData(filepath = "user://savegame.save"):
 	var save_game = File.new()
@@ -64,6 +67,7 @@ func loadSaveData(filepath = "user://savegame.save"):
 		
 		missionUnlocked = save_data["missionUnlocked"]
 		missionScores = save_data["missionScores"]
+		missionScores = save_data["missionTimes"]
 		missionStars = save_data["missionStars"]
 		
 		skillsEquipped = save_data["skillsEquipped"]
@@ -74,6 +78,7 @@ func loadSaveData(filepath = "user://savegame.save"):
 		
 		volumeLevel = save_data["volumeLevel"]
 		starts = save_data["starts"]
+		stars = save_data["stars"]
 		
 		dialogues = save_data["dialogues"]
 		
@@ -86,6 +91,7 @@ func writeSaveData(filepath = "default"):
 	var save_data = {
 			"missionUnlocked": missionUnlocked,
 			"missionScores": missionScores,
+			"missionTimes": missionTimes,
 			"missionStars": missionStars,
 		
 			"skillsEquipped": skillsEquipped,
@@ -96,6 +102,7 @@ func writeSaveData(filepath = "default"):
 				
 			"volumeLevel": volumeLevel,
 			"starts": starts,
+			"stars": stars,
 			
 			"dialogues": dialogues
 		}

@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ResultsScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/PixelFJVerdana12pt.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/images/buttons/button_next_normal_enabled copy.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/buttons/button_next_pressed_enabled.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/levelselect/greystar.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/dialogue/victory.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/dialogue/vignette.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="ResultsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = 50
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TimeText" type="Label" parent="Node2D"]
+margin_left = 343.0
+margin_top = 152.0
+margin_right = 601.0
+margin_bottom = 188.0
+rect_pivot_offset = Vector2( 223.109, 68.9033 )
+custom_fonts/font = SubResource( 1 )
+text = "Time:"
+
+[node name="ScoreText" type="Label" parent="Node2D"]
+margin_left = 344.851
+margin_top = 196.646
+margin_right = 536.851
+margin_bottom = 271.646
+rect_pivot_offset = Vector2( 127.656, 27.9949 )
+custom_fonts/font = SubResource( 1 )
+text = "Score:
+"
+
+[node name="StarsText" type="Label" parent="Node2D"]
+margin_left = 342.903
+margin_top = 243.502
+margin_right = 534.903
+margin_bottom = 318.502
+rect_pivot_offset = Vector2( 127.656, 27.9949 )
+custom_fonts/font = SubResource( 1 )
+text = "Stars Earned:
+"
+
+[node name="GoNext" type="TextureButton" parent="Node2D"]
+margin_left = 494.394
+margin_top = 471.441
+margin_right = 686.394
+margin_bottom = 520.441
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+
+[node name="Star1" type="Sprite" parent="."]
+position = Vector2( 410, 380 )
+scale = Vector2( 3, 3 )
+z_index = 50
+texture = ExtResource( 5 )
+
+[node name="Star2" type="Sprite" parent="."]
+position = Vector2( 510, 380 )
+scale = Vector2( 3, 3 )
+z_index = 50
+texture = ExtResource( 5 )
+
+[node name="Star3" type="Sprite" parent="."]
+position = Vector2( 610, 380 )
+scale = Vector2( 3, 3 )
+z_index = 50
+texture = ExtResource( 5 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+z_index = 30
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Vignette" type="Sprite" parent="."]
+position = Vector2( 510.772, 283.837 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="button_up" from="Node2D/GoNext" to="." method="_on_GoNext_button_up"]

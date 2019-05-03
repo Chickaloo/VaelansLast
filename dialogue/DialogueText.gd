@@ -24,7 +24,7 @@ func step():
 		portrait_text = content[dialogue_position][1]
 		body_text = content[dialogue_position][2]
 		
-		pd.dialogues[dialogue_index] = 1
+		#pd.dialogues[dialogue_index] = 1
 		pd.writeSaveData()
 		return false
 		

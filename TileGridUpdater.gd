@@ -22,4 +22,3 @@ func _process(delta: float) -> void:
 			p.set_cellv(tile, 2)
 		elif p.get_cellv(tile) == 2 and p.get_cellv(up) == 1:
 			p.set_cellv(tile, 0)
-#	pass
