@@ -24,8 +24,6 @@ var enemyBaseCount
 var gameSpeed = 1
 var opendialogue
 
-var _clickLock = false
-
 var A = AStar.new()
 
 func getClosest2(node, targets):
@@ -89,7 +87,6 @@ func getClosestFromGroup(node, group):
 	pass
 	
 func _process(delta: float) -> void:
-	_clickLock = false
 	$Camera/GoldDisplay.text = 'Gold: ' + str(playerGold)
 	
 func _unhandled_input(event: InputEvent) -> void:
