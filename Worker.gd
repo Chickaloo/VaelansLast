@@ -33,10 +33,6 @@ func _process(delta: float) -> void:
 	if not moveTowards(_parentBase.global_position, delta):
 		_canBuild = true
 
-#hack to make workers not highlighted
-func selectedSetter(value):
-	_selected = value
-
 func die():
 	emit_signal('workerDied')
 	.die()

@@ -91,13 +91,13 @@ func _process(delta: float) -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
-		if $Camera/ClickOptions.mode == 4:
+		if $Camera/ClickOptions.mode == ClickOptions.FIREBALL:
 			if playerGold >= 10:
 				playerGold -= 10
 				var hitbox = AreaHitbox.new(null, null, ENEMY_GROUP, 10, 0, 50, 1, 'res://fireball.jpg')
 				hitbox.position = event.position
 				add_child(hitbox)
-		elif $Camera/ClickOptions.mode == 3:
+		elif $Camera/ClickOptions.mode == ClickOptions.BUILDING:
 			var buildSite = spawn('res://BuildSite.tscn')
 			buildSite.position = event.position
 			
