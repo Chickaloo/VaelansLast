@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://worldmap.png" type="Texture" id=1]
+[ext_resource path="res://LevelSelect.gd" type="Script" id=2]
+[ext_resource path="res://Flag.tscn" type="PackedScene" id=3]
+
+[node name="LevelSelect" type="Sprite"]
+position = Vector2( 515.896, 286.729 )
+scale = Vector2( 0.647546, 0.647546 )
+z_index = -1000
+z_as_relative = false
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Level01" parent="." instance=ExtResource( 3 )]
+position = Vector2( -596.852, -259.109 )
+z_index = -10
+z_as_relative = false
+level = "res://TestLevel.tscn"
+
+[node name="Level02" parent="." instance=ExtResource( 3 )]
+position = Vector2( -264.829, -243.666 )
+z_index = -10
+z_as_relative = false
+level = "res://TestLevel.tscn"
+levelid = 1
+

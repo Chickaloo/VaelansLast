@@ -1,0 +1,170 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://Actor.gd"
+}, {
+"base": "Actor",
+"class": "ActorMoving",
+"language": "GDScript",
+"path": "res://ActorMoving.gd"
+}, {
+"base": "DetectionField",
+"class": "AreaHitbox",
+"language": "GDScript",
+"path": "res://AreaHitbox.gd"
+}, {
+"base": "Actor",
+"class": "Base",
+"language": "GDScript",
+"path": "res://Base.gd"
+}, {
+"base": "Area2D",
+"class": "BuildSiteMarker",
+"language": "GDScript",
+"path": "res://BuildSiteMarker.gd"
+}, {
+"base": "HBoxContainer",
+"class": "ClickOptions",
+"language": "GDScript",
+"path": "res://ClickOptions.gd"
+}, {
+"base": "Node2D",
+"class": "Clock",
+"language": "GDScript",
+"path": "res://Clock.gd"
+}, {
+"base": "Area2D",
+"class": "DetectionField",
+"language": "GDScript",
+"path": "res://DetectionField.gd"
+}, {
+"base": "Control",
+"class": "Dialogue",
+"language": "GDScript",
+"path": "res://dialogue/Dialogue.gd"
+}, {
+"base": "Node",
+"class": "DialogueText",
+"language": "GDScript",
+"path": "res://dialogue/DialogueText.gd"
+}, {
+"base": "Node",
+"class": "Dialogues",
+"language": "GDScript",
+"path": "res://dialogue/Dialogues.gd"
+}, {
+"base": "Node",
+"class": "DirectHitbox",
+"language": "GDScript",
+"path": "res://DirectHitbox.gd"
+}, {
+"base": "Base",
+"class": "EnemyBase",
+"language": "GDScript",
+"path": "res://EnemyBase.gd"
+}, {
+"base": "Unit",
+"class": "EnemyUnit",
+"language": "GDScript",
+"path": "res://EnemyUnit.gd"
+}, {
+"base": "Area2D",
+"class": "Flag",
+"language": "GDScript",
+"path": "res://Flag.gd"
+}, {
+"base": "Node2D",
+"class": "Globals",
+"language": "GDScript",
+"path": "res://Globals.gd"
+}, {
+"base": "PlayerUnit",
+"class": "GroupUnit",
+"language": "GDScript",
+"path": "res://GroupUnit.gd"
+}, {
+"base": "Node2D",
+"class": "Level",
+"language": "GDScript",
+"path": "res://Level.gd"
+}, {
+"base": "Base",
+"class": "PlayerBase",
+"language": "GDScript",
+"path": "res://PlayerBase.gd"
+}, {
+"base": "Unit",
+"class": "PlayerUnit",
+"language": "GDScript",
+"path": "res://PlayerUnit.gd"
+}, {
+"base": "TileMap",
+"class": "TileGrid",
+"language": "GDScript",
+"path": "res://TileGrid.gd"
+}, {
+"base": "Node",
+"class": "TileGridUpdater",
+"language": "GDScript",
+"path": "res://TileGridUpdater.gd"
+}, {
+"base": "ActorMoving",
+"class": "Unit",
+"language": "GDScript",
+"path": "res://Unit.gd"
+} ]
+_global_script_class_icons={
+"Actor": "",
+"ActorMoving": "",
+"AreaHitbox": "",
+"Base": "",
+"BuildSiteMarker": "",
+"ClickOptions": "",
+"Clock": "",
+"DetectionField": "",
+"Dialogue": "",
+"DialogueText": "",
+"Dialogues": "",
+"DirectHitbox": "",
+"EnemyBase": "",
+"EnemyUnit": "",
+"Flag": "",
+"Globals": "",
+"GroupUnit": "",
+"Level": "",
+"PlayerBase": "",
+"PlayerUnit": "",
+"TileGrid": "",
+"TileGridUpdater": "",
+"Unit": ""
+}
+
+[application]
+
+config/name="CS4700 Final"
+run/main_scene="res://LevelSelect.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+pd="*res://PlayerData.gd"
+Dialogues="*res://dialogue/Dialogues.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
