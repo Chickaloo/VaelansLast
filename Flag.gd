@@ -8,10 +8,12 @@ export(int) var panelposition
 var _timer = 0
 var levelhover = preload("res://LevelHoverPanel.tscn")
 var panel
+var sprite
 var panelpositions = [300, 500]
 
 func _ready():
 	connect('input_event', self, 'clicked')
+	sprite = get_child(0)
 	
 func clicked( viewport, event, shape_idx ):
 	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
@@ -27,7 +29,7 @@ func _process(delta):
 	_timer += delta
 	if _timer >= frameTime:
 		_timer = 0
-		$Sprite.frame = ($Sprite.frame + 1) % 4
+		sprite.frame = (sprite.frame + 1) % 4
 
 func hover():
 	

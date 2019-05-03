@@ -22,7 +22,7 @@ func _ready():
 	# If Equipment hasn't been unlocked
 	#if global.missionUnlocked[2] == 0:
 	#	EquipmentButton.disabled = true
-	
+	"""
 	for i in range(pd.missionUnlocked.size()):
 		if pd.missionUnlocked[i] == 1:
 			var flag = Flag.new()
@@ -31,7 +31,7 @@ func _ready():
 			get_parent().add_child(flag)
 			flags.append(flag)
 		else:
-			break
+			break"""
 
 	#if pd.dialogues[0] == 1:
 		#var d = DialogueBox.instance()

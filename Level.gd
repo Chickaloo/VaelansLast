@@ -105,8 +105,11 @@ func baseDestroyed(base):
 	if PLAYER_BASE_GROUP in base.get_groups():
 		playerBaseCount -= 1
 		if playerBaseCount == 0:
-			return
-			spawn(losingDialogue)
+			
+			opendialogue = Dialogue.instance()
+			opendialogue.isEnd = true
+			opendialogue.dialogue = Dialogues.LossTextGeneric
+			add_child(opendialogue)
 	else:
 		enemyBaseCount -= 1
 		if enemyBaseCount == 0:
