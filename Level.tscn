@@ -78,6 +78,7 @@ smoothing_enabled = true
 script = ExtResource( 7 )
 
 [node name="Canvas" type="CanvasLayer" parent="."]
+pause_mode = 2
 
 [node name="TimeDisplay" type="Label" parent="Canvas"]
 margin_right = 40.0

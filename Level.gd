@@ -109,11 +109,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			if playerGold >= 10:
 				playerGold -= 10
 				var hitbox = AreaHitbox.new(null, null, ENEMY_GROUP, 10, 0, 50, 1, 'res://fireball.jpg')
-				hitbox.position = event.position
+				hitbox.position = get_global_mouse_position()
 				add_child(hitbox)
 		elif $Canvas/ClickOptions.mode == ClickOptions.BUILDING:
 			var buildSite = spawn('res://BuildSite.tscn')
-			buildSite.position = event.position
+			buildSite.position = get_global_mouse_position()
 		elif $Canvas/ClickOptions.mode == ClickOptions.SELECTION:
 			add_child(SelectionField.new())
 			

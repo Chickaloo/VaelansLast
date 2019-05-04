@@ -20,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_parent().clicked()
 			get_tree().set_input_as_handled()
 		elif _selected:
-			get_parent().dest = event.position
+			get_parent().dest = get_global_mouse_position()
 			self._selected = false
 			
 func selectedSetter(value):
