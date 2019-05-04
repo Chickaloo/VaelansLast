@@ -3,6 +3,7 @@ extends Area2D
 class_name SelectionField
 
 var corner
+var _doneTimer = -1
 
 func _ready() -> void:
 	var collision = CollisionShape2D.new()
@@ -26,8 +27,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			global_position = middle + corner
 			$Sprite.scale = Globals.calcSpriteScale($Sprite, abs(middle.y * 2), abs(middle.x * 2))
 		else:
-			for area in get_overlapping_areas():
-				#I have to directly use the srting to prevent circular dependancies with Level
-				if 'groupUnit' in area.get_groups():
-					area.get_parent().clicked()
-			queue_free()
+			_doneTimer = 3
+
+func _process(delta: float) -> void:
+	_doneTimer -= 1
+	if _doneTimer == 0:
+		for area in get_overlapping_areas():
+			#I have to directly use the srting to prevent circular dependancies with Level
+			if 'groupUnit' in area.get_groups():
+				area.get_parent().clicked()
+		queue_free()
