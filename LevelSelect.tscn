@@ -13,12 +13,14 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Level01" parent="." instance=ExtResource( 3 )]
+visible = false
 position = Vector2( -596.852, -259.109 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
 
 [node name="Level02" parent="." instance=ExtResource( 3 )]
+visible = false
 position = Vector2( -264.829, -243.666 )
 z_index = -10
 z_as_relative = false

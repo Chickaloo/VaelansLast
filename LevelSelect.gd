@@ -22,16 +22,11 @@ func _ready():
 	# If Equipment hasn't been unlocked
 	#if global.missionUnlocked[2] == 0:
 	#	EquipmentButton.disabled = true
-	"""
 	for i in range(pd.missionUnlocked.size()):
 		if pd.missionUnlocked[i] == 1:
-			var flag = Flag.new()
-			flag.levelid = i
-			flag.global_position = Vector2(missionLocX[i], missionLocY[i])
-			get_parent().add_child(flag)
-			flags.append(flag)
+			get_child(i).visible = true
 		else:
-			break"""
+			break
 
 	#if pd.dialogues[0] == 1:
 		#var d = DialogueBox.instance()
