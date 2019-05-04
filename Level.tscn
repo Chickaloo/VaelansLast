@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
 [ext_resource path="res://TileMap.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Clock.gd" type="Script" id=6]
 [ext_resource path="res://ClickOptions.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameSpeed.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Camera.gd" type="Script" id=9]
 
 [sub_resource type="TileSet" id=1]
 resource_local_to_scene = true
@@ -95,4 +96,7 @@ margin_left = 119.895
 margin_top = 4.94737
 margin_right = 821.895
 margin_bottom = 42.9473
+
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource( 9 )
 

@@ -5,7 +5,7 @@
 [ext_resource path="res://BasicPlayerBase.tscn" type="PackedScene" id=3]
 [ext_resource path="res://BasicEnemyBase.tscn" type="PackedScene" id=4]
 
-[node name="Level" instance=ExtResource( 1 )]
+[node name="Level" index="0" instance=ExtResource( 1 )]
 openingDialogue = "res://Archer/PlayerArcher.tscn"
 losingDialogue = "res://Worker.tscn"
 winningDialogue = "res://Tank/PlayerTank.tscn"
@@ -21,9 +21,11 @@ tile_data = PoolIntArray( -65538, 0, 0, -65537, 0, 1245184, -131072, 0, 196609, 
 
 [node name="BasicPlayerBase" parent="." index="3" instance=ExtResource( 3 )]
 position = Vector2( 135.461, 82.7016 )
+spawnOffset = Vector2( 0, 0 )
 
 [node name="BasicPlayerBase2" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 131.165, 493.679 )
+spawnOffset = Vector2( 0, 0 )
 
 [node name="BasicEnemyBase" parent="." index="5" instance=ExtResource( 4 )]
 position = Vector2( 964.563, 475.769 )

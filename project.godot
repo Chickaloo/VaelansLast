@@ -185,6 +185,4 @@ window/stretch/mode="viewport"
 
 [rendering]
 
-quality/2d/use_pixel_snap=true
-quality/shadows/filter_mode=0
 environment/default_environment="res://default_env.tres"
