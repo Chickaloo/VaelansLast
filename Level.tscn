@@ -70,10 +70,8 @@ tile_set = SubResource( 1 )
 [node name="Clock" type="Node2D" parent="."]
 script = ExtResource( 6 )
 
-[node name="Canvas" type="Camera2D" parent="."]
+[node name="Canvas" type="CanvasLayer" parent="."]
 pause_mode = 2
-anchor_mode = 0
-current = true
 
 [node name="GoldDisplay" type="Label" parent="Canvas"]
 margin_left = 940.0
@@ -88,15 +86,18 @@ margin_bottom = 14.0
 [node name="ClickOptions" parent="Canvas" instance=ExtResource( 7 )]
 margin_left = 3.0
 margin_top = 533.0
-margin_right = 1023.0
-margin_bottom = 596.0
+margin_right = -5.0
+margin_bottom = -3.0
 
 [node name="GameSpeed" parent="Canvas" instance=ExtResource( 8 )]
-margin_left = 119.895
-margin_top = 4.94737
-margin_right = 821.895
-margin_bottom = 42.9473
+margin_left = 120.0
+margin_top = 5.0
+margin_right = -164.0
+margin_bottom = -559.0
 
 [node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+smoothing_enabled = true
 script = ExtResource( 9 )
 
