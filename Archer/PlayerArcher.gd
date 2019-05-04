@@ -10,6 +10,13 @@ export(float) var hitboxDuration
 var attackTimer = 0
 export(float) var damage
 
+func attack(target):
+	attackTimer = attackRate + rand_range(-.2, .2)
+	global_position += baseOffset
+	var hitbox = AreaHitbox.new(self, target, Level.ENEMY_GROUP, damage, hitboxSpeed, hitboxSize, hitboxDuration, 'res://arrow.png')
+	level.add_child(hitbox)
+	global_position -= baseOffset
+
 func _process(delta: float) -> void:
 	global_position -= baseOffset
 	delta *= get_node('/root/Level').gameSpeed
@@ -21,14 +28,10 @@ func _process(delta: float) -> void:
 		
 		if distance <= attackRadius:
 			if attackTimer <= 0:
-				attackTimer = attackRate + rand_range(-.2, .2)
-				var hitbox = AreaHitbox.new(self, _target, Level.ENEMY_GROUP, damage, hitboxSpeed, hitboxSize, hitboxDuration, 'res://arrow.png')
-				level.add_child(hitbox)
+				attack(_target)
 		elif closest and global_position.distance_to(closest.global_position) <= attackRadius:
 			if attackTimer <= 0:
-				attackTimer = attackRate + rand_range(-.2, .2)
-				var hitbox = AreaHitbox.new(self, _target, Level.ENEMY_GROUP, damage, hitboxSpeed, hitboxSize, hitboxDuration, 'res://arrow.png')
-				level.add_child(hitbox)
+				attack(closest)
 
 		if closest:
 			distance = global_position.distance_to(closest.global_position)
