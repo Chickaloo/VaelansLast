@@ -12,3 +12,7 @@ func _process(delta: float) -> void:
 		var diff = LastMouseCoords - CurrentMouseCoords
 		translate(diff * 5)
 	LastMouseCoords = CurrentMouseCoords
+	
+func moveTo(pos):
+	var difference = pos - global_position
+	translate(difference)
