@@ -65,7 +65,7 @@ text = "Archer"
 
 [node name="TankSelectionBox3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 63, 59 )
-unit = "res://Tank/PlayerTank.tscn"
+unit = "res://TankGroup.tscn"
 unitName = "Tank"
 unitCost = "10"
 

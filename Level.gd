@@ -69,7 +69,7 @@ func navigate(node, dest, speed = 1.0):
 	var path = A.get_point_path(closestIDStart, closestIDEnd)
 	if len(path) == 0:
 		return Vector2(0,0)
-	if len(path) <= 2:
+	if len(path) == 1:
 		return (Vector2(dest.x, dest.y) - node.global_position).clamped(speed)
 	var direction = path[1] - startPos
 	return Vector2(direction.x, direction.y).clamped(speed)
@@ -101,20 +101,20 @@ func getClosestFromGroup(node, group):
 	pass
 	
 func _process(delta: float) -> void:
-	$Camera/GoldDisplay.text = 'Gold: ' + str(playerGold)
+	$Canvas/GoldDisplay.text = 'Gold: ' + str(playerGold)
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
-		if $Camera/ClickOptions.mode == ClickOptions.FIREBALL:
+		if $Canvas/ClickOptions.mode == ClickOptions.FIREBALL:
 			if playerGold >= 10:
 				playerGold -= 10
 				var hitbox = AreaHitbox.new(null, null, ENEMY_GROUP, 10, 0, 50, 1, 'res://fireball.jpg')
-				hitbox.position = event.position
+				hitbox.position = get_global_mouse_position()
 				add_child(hitbox)
-		elif $Camera/ClickOptions.mode == ClickOptions.BUILDING:
+		elif $Canvas/ClickOptions.mode == ClickOptions.BUILDING:
 			var buildSite = spawn('res://BuildSite.tscn')
-			buildSite.position = event.position
-		elif $Camera/ClickOptions.mode == ClickOptions.SELECTION:
+			buildSite.position = get_global_mouse_position()
+		elif $Canvas/ClickOptions.mode == ClickOptions.SELECTION:
 			add_child(SelectionField.new())
 			
 func baseDestroyed(base):

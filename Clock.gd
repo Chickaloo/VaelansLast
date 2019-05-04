@@ -15,7 +15,7 @@ func _process(delta):
 	var minutes = elapsed / 60
 	var seconds = elapsed % 60
 	var str_elapsed = "Time: %02d : %02d" % [minutes, seconds]
-	get_node('/root/Level/Camera/TimeDisplay').text = str_elapsed
+	get_node('/root/Level/Canvas/TimeDisplay').text = str_elapsed
 
 func getTime():
 	return time_now-time_start

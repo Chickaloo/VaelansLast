@@ -16,13 +16,15 @@ func _ready():
 		
 func pressed(button):
 	get_child(mode).modulate = Color(1,1,1)
-	mode = button.get_index()
-	get_child(mode).modulate = Color(.5,.5,.5)
 	
 	if mode == PAUSED:
-		get_tree().paused = !get_tree().paused
+		mode = SELECTION
 	else:
-		get_tree().paused = false
+		mode = button.get_index()
+	
+	get_child(mode).modulate = Color(.5,.5,.5)
+	
+	get_tree().paused = mode == PAUSED
 	
 	if mode == BUILDING:
 		get_node('/root/Level').spawn('res://BuildSiteMarker.tscn')
