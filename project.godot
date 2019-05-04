@@ -79,6 +79,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://EnemyUnit.gd"
 }, {
+"base": "Sprite",
+"class": "Firestorm",
+"language": "GDScript",
+"path": "res://Firestorm.gd"
+}, {
 "base": "Area2D",
 "class": "Flag",
 "language": "GDScript",
@@ -149,6 +154,7 @@ _global_script_class_icons={
 "DirectHitbox": "",
 "EnemyBase": "",
 "EnemyUnit": "",
+"Firestorm": "",
 "Flag": "",
 "Globals": "",
 "GroupUnit": "",
@@ -179,4 +185,6 @@ window/stretch/mode="viewport"
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
+quality/shadows/filter_mode=0
 environment/default_environment="res://default_env.tres"
