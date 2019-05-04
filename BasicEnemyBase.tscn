@@ -5,10 +5,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
 
-[node name="BasicEnemyBase" instance=ExtResource( 1 )]
+[node name="BasicEnemyBase" index="0" instance=ExtResource( 1 )]
 maxHealth = 20.0
-units = [ "res://EnemyTank.tscn" ]
 gold = 20
+units = [ "res://EnemyTank.tscn" ]
+numberSpawned = 5
+spawnTime = 3.0
 
 [node name="Shape" parent="." index="1"]
 shape = SubResource( 1 )

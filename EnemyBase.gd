@@ -4,8 +4,10 @@ class_name EnemyBase
 
 export(int) var gold
 export(Array, String, FILE, '*.tscn') var units
+export(int) var numberSpawned
+export(float) var spawnTime
 
-var TEMP_TIMER = 0
+var _spawnTimer = 0
 
 func _ready():
 	add_to_group(Level.ENEMY_GROUP)
@@ -18,10 +20,13 @@ func die():
 	 
 func _process(delta: float) -> void:
 	delta *= level.gameSpeed
-	TEMP_TIMER += delta
-	if TEMP_TIMER >= 3:
-		TEMP_TIMER = 0
-		var unit = units[randi() % len(units)]
-		spawn(unit)
-		
-		
+	_spawnTimer += delta
+	if _spawnTimer >= spawnTime:
+		_spawnTimer = 0
+		for x in range(numberSpawned):
+			var unit = units[randi() % len(units)]
+			spawn(unit, Vector2(24 * randf(), 24 * randf()))
+			
+func spawn(unitScene, spawnOffset):
+	var unit = level.spawn(unitScene)
+	unit.position = self.position + spawnOffset

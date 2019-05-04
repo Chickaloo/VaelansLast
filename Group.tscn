@@ -18,6 +18,8 @@ radius = 118.068
 [node name="Group" instance=ExtResource( 1 )]
 monitorable = false
 script = ExtResource( 2 )
+attackRadius = 0.0
+aggroRadius = 0.0
 
 [node name="Sprite" parent="." index="0"]
 texture = SubResource( 1 )
