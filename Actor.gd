@@ -63,6 +63,7 @@ class DamageText extends Label:
 	func _init(damage, dir = Vector2(0,0)):
 		set_text(str(damage))
 		direction = dir + Vector2(randf(), randf())
+		modulate = Color(1,0,0)
 	
 	func _process(delta):
 		if speed > 0:
