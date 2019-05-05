@@ -49,8 +49,8 @@ func getHit(hitbox):
 func die():
 	_isDead = true
 	
-	for i in range(randi()%10 + 4):
-		level.add_child(Gib.new(self.global_position))
+	#for i in range(randi()%10 + 4):
+	#	level.add_child(Gib.new(self.global_position))
 	call_deferred("queue_free")
 
 class DamageText extends Label:

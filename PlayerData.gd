@@ -13,6 +13,7 @@ var unitLevels
 
 var volumeLevel
 var starts
+var maxStars
 var stars
 
 var dialogues
@@ -52,6 +53,7 @@ func newGame():
 	
 	volumeLevel = 10
 	starts = 0
+	maxStars = 0
 	stars = 0
 	
 	dialogues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -79,6 +81,7 @@ func loadSaveData(filepath = "user://savegame.save"):
 		volumeLevel = save_data["volumeLevel"]
 		starts = save_data["starts"]
 		stars = save_data["stars"]
+		maxStars = save_data["maxStars"]
 		
 		dialogues = save_data["dialogues"]
 		
@@ -102,6 +105,7 @@ func writeSaveData(filepath = "default"):
 				
 			"volumeLevel": volumeLevel,
 			"starts": starts,
+			"maxStars": maxStars,
 			"stars": stars,
 			
 			"dialogues": dialogues

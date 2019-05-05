@@ -76,9 +76,11 @@ func navigate(node, dest, speed = 1.0):
 
 func _ready():
 	time_start = OS.get_unix_time()
-	opendialogue = Dialogue.instance()
-	opendialogue.dialogue = Dialogues.TutorialText
-	add_child(opendialogue)
+	if levelid > 0 and pd.missionScores[levelid] == 0:
+		opendialogue = Dialogue.instance()
+		opendialogue.dialogue = Dialogues.TutorialText
+		add_child(opendialogue)
+	
 	
 	playerBaseCount = len(get_tree().get_nodes_in_group(PLAYER_BASE_GROUP))
 	enemyBaseCount = len(get_tree().get_nodes_in_group(ENEMY_BASE_GROUP))
