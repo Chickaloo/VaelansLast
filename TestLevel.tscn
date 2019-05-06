@@ -21,20 +21,24 @@ tile_data = PoolIntArray( -65538, 0, 0, -65537, 0, 1245184, -131072, 0, 196609, 
 
 [node name="BasicPlayerBase" parent="." index="3" instance=ExtResource( 3 )]
 position = Vector2( 135.461, 82.7016 )
-spawnOffset = Vector2( 0, 0 )
 
 [node name="BasicPlayerBase2" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 131.165, 493.679 )
-spawnOffset = Vector2( 0, 0 )
 
 [node name="BasicEnemyBase" parent="." index="5" instance=ExtResource( 4 )]
 position = Vector2( 964.563, 475.769 )
+numberSpawned = 3
+spawnTime = 10.0
 
 [node name="BasicEnemyBase2" parent="." index="6" instance=ExtResource( 4 )]
 position = Vector2( 878.064, 482.999 )
+numberSpawned = 3
+spawnTime = 10.0
 
 [node name="BasicEnemyBase3" parent="." index="7" instance=ExtResource( 4 )]
 position = Vector2( 875.848, 97.4038 )
+numberSpawned = 3
+spawnTime = 10.0
 
 [node name="Camera" parent="." index="8"]
 pause_mode = 2

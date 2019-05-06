@@ -9,7 +9,12 @@ func _ready() -> void:
 
 func moveTowards(destination, delta):
 	var velocity = level.navigate(self, destination, walkSpeed * delta)
-	translate(velocity)
+	if animationstate == 0:
+		if velocity.x < 0:
+			$Sprite.scale.x = -1 * basescale
+		else:
+			$Sprite.scale.x = basescale
+	self.global_position += velocity
 	return velocity != Vector2(0,0)
 		
 func moveToPlayerBase(delta):

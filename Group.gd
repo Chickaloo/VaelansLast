@@ -6,10 +6,13 @@ export(float) var waitRadius
 export(float) var avoidRadius
 export(String, FILE, '*.tscn') var baseUnit
 export(Array, int) var upgradeCosts
+var unit = [preload("res://Archer/PlayerArcher.tscn"), preload("res://Tank/PlayerTank.tscn"), preload("res://Tank/PlayerTank.tscn")]
 
 var _level = 0
 var _rotation
 var _units = []
+var detectionRange
+export(int) var unitid
 
 func unitDied(unit):
 	_units.erase(unit)
@@ -18,14 +21,19 @@ func unitDied(unit):
 
 func _init():
 	_rotation = rand_range(-3.14, 3.14)
-
+	detectionRange = get_child(2)
+	
 func _ready():
 	baseUnit = baseUnit.substr(0, len(baseUnit) - 5)
 	
-	for child in get_children():
-		if Level.GROUP_UNIT_GROUP in child.get_groups():
-			_units.append(child)
-			child.connect('death', self, 'unitDied', [child])
+	for i in range(pd.unitSizes[unitid]):
+		var T = unit[unitid].instance()
+		_units.append(T)
+		print("adding " + str(T))
+		add_child(T)
+		T.baseOffset = Vector2(rand_range(-10, 10), rand_range(-10, 10))
+		T.global_position = self.global_position + T.baseOffset
+		T.connect('death', self, 'unitDied', [T])
 
 func _process(delta: float) -> void:
 	delta *= get_node('/root/Level').gameSpeed
@@ -35,7 +43,10 @@ func _process(delta: float) -> void:
 		var distance = global_position.distance_to(closest.global_position)
 		
 		for unit in _units:
-			unit._target = closest
+			var wr = weakref(closest).get_ref();
+			
+			if wr:
+				unit._target = closest
 		
 		if distance <= avoidRadius:
 			moveTowards(closest.global_position, -delta)
@@ -53,7 +64,7 @@ func _process(delta: float) -> void:
 func setInitialPosition(position):
 	self.position = position
 	for unit in _units:
-		unit.translate(position)
+		unit.position = position
 
 func clicked():
 	for unit in _units:

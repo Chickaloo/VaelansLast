@@ -33,8 +33,8 @@ func selectedSetter(value):
 func _ready():
 	set_as_toplevel(true)
 	add_to_group(Level.GROUP_UNIT_GROUP)
-	position = position.rotated(get_parent()._rotation)
-	baseOffset = position
+#	position = position.rotated(get_parent()._rotation)
+#	baseOffset = position
 	connect("mouse_entered",self,"_mouse_over", [true])
 	connect("mouse_exited",self,"_mouse_over", [false])
 	

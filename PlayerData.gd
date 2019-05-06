@@ -9,6 +9,12 @@ var skillsEquipped
 var skillLevels
 
 var unitsUnlocked
+var unitHealth
+var unitSizes
+var unitCosts
+var unitDamages
+var unitSpeeds
+var unitAttackSpeeds
 var unitLevels
 
 var volumeLevel
@@ -39,23 +45,43 @@ func _ready():
 		Arguments
 		filepath - string containing the path to savefile
 """
+func resetUpgrades():
+	
+	unitLevels = [1, 1, 1, 1, 1, 1]
+	
+	unitSizes = [3,5,1,1,1,1]
+	unitHealth = [5,40,3,15,20,100]
+	unitCosts = [20,30,15,40,200,200]
+	unitDamages = [1,4,5,30,10,20]
+	unitSpeeds = [40,45,30,0,0,0]
+	unitAttackSpeeds = [1,0,0,0,0,0]
+	
+	writeSaveData()
+
 func newGame():
 	missionUnlocked = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	missionScores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	missionTimes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	missionStars = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-	skillsEquipped = []
-	skillLevels = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	skillsEquipped = [1, -1]
+	skillLevels = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
 
-	unitsUnlocked = [0, 0, 0, 0, 0, 0]
-	unitLevels = [0, 0, 0, 0, 0, 0]
+	unitsUnlocked = [1, 0, 0, 0, 0, 0]
+	unitLevels = [1, 1, 1, 1, 1, 1]
 	
+	unitSizes = [3,5,1,1,1,1]
+	unitHealth = [5,40,3,15,20,100]
+	unitCosts = [20,30,15,40,200,200]
+	unitDamages = [1,4,5,30,10,20]
+	unitSpeeds = [40,45,30,0,0,0]
+	unitAttackSpeeds = [1,0,0,0,0,0]
+
 	volumeLevel = 10
 	starts = 0
 	maxStars = 0
 	stars = 0
-	
+
 	dialogues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 func loadSaveData(filepath = "user://savegame.save"):
@@ -77,6 +103,13 @@ func loadSaveData(filepath = "user://savegame.save"):
 		
 		unitsUnlocked = save_data["unitsUnlocked"]
 		unitLevels = save_data["unitLevels"]
+	
+		unitSizes = save_data["unitSizes"]
+		unitHealth = save_data["unitHealth"]
+		unitCosts = save_data["unitCosts"]
+		unitDamages = save_data["unitDamages"]
+		unitSpeeds = save_data["unitSpeeds"]
+		unitAttackSpeeds = save_data["unitAttackSpeeds"]
 		
 		volumeLevel = save_data["volumeLevel"]
 		starts = save_data["starts"]
@@ -102,6 +135,13 @@ func writeSaveData(filepath = "default"):
 		
 			"unitsUnlocked": unitsUnlocked,
 			"unitLevels": unitLevels,
+			
+			"unitHealth": unitHealth,
+			"unitSizes": unitSizes,
+			"unitCosts": unitCosts,
+			"unitSpeeds": unitSpeeds,
+			"unitAttackSpeeds": unitAttackSpeeds,
+			"unitDamages": unitDamages,
 				
 			"volumeLevel": volumeLevel,
 			"starts": starts,

@@ -8,6 +8,8 @@ var _health
 var _isDead = false
 var hpsprite
 var hpbgsprite
+var basescale = 2
+var animationstate = 0
 
 onready var level = get_node('/root/Level')
 

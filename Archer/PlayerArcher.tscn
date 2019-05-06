@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Unit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Archer/PlayerArcher.gd" type="Script" id=2]
-[ext_resource path="res://archer.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/units/archeranim.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
 
 [sub_resource type="CircleShape2D" id=2]
 resource_local_to_scene = true
-radius = 208.355
+radius = 161.279
 
 [node name="PlayerArcher" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -27,8 +27,9 @@ hitboxDuration = 1.0
 damage = 3.0
 
 [node name="Sprite" parent="." index="0"]
-scale = Vector2( 0.0312379, 0.0312379 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
+hframes = 5
 
 [node name="Shape" parent="." index="1"]
 shape = SubResource( 1 )

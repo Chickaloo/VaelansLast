@@ -35,7 +35,6 @@ func hover():
 	
 	panel = levelhover.instance()
 	panel.global_position = Vector2(panelpositions[levelid], 200)
-	panel.scale = Vector2(2,2)
 	add_child(panel)
 	panel.set_level(levelid)
 	

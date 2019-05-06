@@ -37,14 +37,17 @@ func set_values(time, gold_remaining, bronze, silver, gold, maxtime, level):
 		if pd.missionStars[3*level] == 0:
 			pd.missionStars[3*level] = 1
 			pd.stars += 1
+			pd.maxStars += 1
 	if time_elapsed < threshold_silver:
 		if pd.missionStars[3*level + 1] == 0:
 			pd.missionStars[3*level + 1] = 1
 			pd.stars += 1
+			pd.maxStars += 1
 	if time_elapsed < threshold_gold:
 		if pd.missionStars[3*level + 2] == 0:
 			pd.missionStars[3*level + 2] = 1
 			pd.stars += 1
+			pd.maxStars += 1
 
 func _ready():
 	get_node('/root/Level').gameSpeed = 1

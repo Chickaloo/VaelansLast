@@ -1,10 +1,13 @@
-extends Sprite
+ extends Sprite
 
 var UpgradesButton
 var EquipmentButton
 
 var missionLocX = [200, 400, 700, 900, 1200, 600, 180, 500, 720, 900, 1160, 1290]
 var missionLocY = [168, 218, 225, 330, 68, 398, 623, 668, 738, 723, 680, 520]
+
+var text
+var missionCount  =0
 
 var flags = []
 
@@ -25,9 +28,12 @@ func _ready():
 	for i in range(pd.missionUnlocked.size()):
 		if pd.missionUnlocked[i] == 1:
 			get_child(i).visible = true
+			missionCount += 1
 		else:
 			break
 
+	var text = get_child(12).get_child(3)
+	text.text = "Progress: %f \n Stars Unlocked: %d/36"% [((missionCount-1)/float(12)),pd.maxStars]
 	#if pd.dialogues[0] == 1:
 		#var d = DialogueBox.instance()
 		#d.dialogue = Dialogues.TutorialText
@@ -57,3 +63,11 @@ func _unhandled_input(event):
 						flags[flags.size()-1].queue_free()
 						flags.remove(flags.size()-1)
 						break
+
+
+func _on_UpgradeButton_pressed():
+	get_tree().change_scene("res://UpgradeScene.tscn")
+
+func _on_ExitButton_pressed():
+	pd.writeSaveData()
+	get_tree().quit()

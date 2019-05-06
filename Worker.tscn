@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Unit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Worker.gd" type="Script" id=2]
-[ext_resource path="res://worker.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/images/units/workeranim.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -17,12 +17,12 @@ maxHealth = 1.0
 walkSpeed = 60.0
 attackRadius = 30.0
 aggroRadius = 60.0
-buildTime = 3.0
-damage = 2.0
+damage = 5.0
 
 [node name="Sprite" parent="." index="0"]
-scale = Vector2( 0.0816327, 0.0816327 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
+hframes = 7
 
 [node name="Shape" parent="." index="1"]
 shape = SubResource( 1 )

@@ -34,7 +34,7 @@ func _ready():
 	connect("area_entered", self, 'hit')
 
 func _process(delta: float) -> void:
-	delta *= get_node('/root/Level').gameSpeed
+	#delta *= get_node('/root/Level').gameSpeed
 	duration -= delta
 	if duration <= 0:
 		call_deferred("queue_free")

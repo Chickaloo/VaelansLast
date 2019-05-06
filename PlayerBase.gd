@@ -20,6 +20,7 @@ func _input_event( viewport, event, shape_idx ):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		if not _selectionOpen:
 			if level.get_node('Canvas/ClickOptions').mode == ClickOptions.SELECTION:
+				level.camera.global_position = self.global_position - get_viewport().size/2
 				_selectionOpen = true
 				startSpawnSelection()
 

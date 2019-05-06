@@ -35,6 +35,8 @@ var opendialogue
 var time_start = 0
 var time_now = 0
 
+var camera
+
 var A = AStar.new()
 
 func getClosest2(node, targets):
@@ -84,17 +86,19 @@ func _ready():
 	
 	playerBaseCount = len(get_tree().get_nodes_in_group(PLAYER_BASE_GROUP))
 	enemyBaseCount = len(get_tree().get_nodes_in_group(ENEMY_BASE_GROUP))
+	clock = get_child(1)
+	camera = get_child(2)
 	return
 	for i in range(50):
 		#spawn('res://Tank//PlayerTank.tscn').position = Vector2(100, 100)
 		spawn('res://Archer//PlayerArcher.tscn').position = Vector2(300, 300)
 		#spawn('res://EnemyTank.tscn').position = Vector2(200, 200)
 	
-	clock = get_child(1)
 
 	
 func spawn(scenePath):
 	var scene = load(scenePath)
+	print("spawned " + scenePath)
 	var node = scene.instance()
 	add_child(node)
 	return node
@@ -129,12 +133,12 @@ func baseDestroyed(base):
 			opendialogue = Dialogue.instance()
 			opendialogue.isEnd = true
 			opendialogue.dialogue = Dialogues.LossTextGeneric
-			add_child(opendialogue)
+			get_child(2).add_child(opendialogue)
 	else:
 		enemyBaseCount -= 1
 		if enemyBaseCount == 0:
 			time_now = OS.get_unix_time()
 			var results = Results.instance()
 			results.set_values(time_now-time_start, playerGold, bronzetimethreshold, silvertimethreshold, goldtimethreshold, maxtime, levelid)
-			add_child(results)
+			get_child(2).add_child(results)
 			

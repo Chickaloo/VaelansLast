@@ -12,6 +12,10 @@ func _process(delta: float) -> void:
 	attackTimer -= delta
 	var closest = get_node('DetectionRange').getClosest()
 	if closest:
+		if closest.global_position.x < self.global_position.x:
+			$Sprite.scale.x = -2
+		else:
+			$Sprite.scale.x = 2
 		var distance = global_position.distance_to(closest.global_position)
 		if distance <= attackRadius:
 			if attackTimer <= 0:
@@ -19,6 +23,10 @@ func _process(delta: float) -> void:
 				var hitbox = DirectHitbox.new(self, closest, damage)
 				level.add_child(hitbox)
 		elif distance <= aggroRadius:
+			if closest.global_position.x < self.global_position.x:
+				$Sprite.scale.x = -2
+			else:
+				$Sprite.scale.x = 2
 			moveTowards(closest.global_position, delta)
 		return
 		
