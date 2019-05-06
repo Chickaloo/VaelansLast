@@ -6,7 +6,7 @@ var portrait
 var dialogue_position = 0
 var camera_position
 var dialogue_index
-
+var camera = []
 var content = [
 	[]
 ]
@@ -17,6 +17,10 @@ func step():
 		portrait = content[dialogue_position][0]
 		portrait_text = content[dialogue_position][1]
 		body_text = content[dialogue_position][2]
+		
+		if camera.size() == content.size():
+			pass
+		
 		return true
 	else:
 		dialogue_position = 0

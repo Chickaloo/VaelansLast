@@ -9,7 +9,8 @@ var _timer = 0
 var levelhover = preload("res://LevelHoverPanel.tscn")
 var panel
 var sprite
-var panelpositions = [300, 500]
+var panelpositionsx = [300, 300, 300, 300, -300, -300, -300, 300, 300, 300, -300, -300]
+var panelpositionsy = [200, 200, 200, 200, 200, 200, 200, 100, -50, -170, -90, 0]
 
 func _ready():
 	connect('input_event', self, 'clicked')
@@ -34,7 +35,7 @@ func _process(delta):
 func hover():
 	
 	panel = levelhover.instance()
-	panel.global_position = Vector2(panelpositions[levelid], 200)
+	panel.global_position = Vector2(panelpositionsx[levelid], panelpositionsy[levelid])
 	add_child(panel)
 	panel.set_level(levelid)
 	

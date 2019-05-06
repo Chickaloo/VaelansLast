@@ -5,8 +5,8 @@ var _closeTimer = -1
 func _ready():
 	_closeTimer = 5
 
-func selected(unit):
-	get_parent().spawn(unit)
+func selected(unit, unitid):
+	get_parent().spawn(unit, unitid)
 	
 
 func _input(event: InputEvent) -> void:
