@@ -37,7 +37,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 1
+levelid = 2
 
 [node name="Level04" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -46,7 +46,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 1
+levelid = 3
 
 [node name="Level05" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -55,7 +55,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 1
+levelid = 4
 
 [node name="Level06" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -64,7 +64,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 1
+levelid = 5
 
 [node name="Level07" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -73,7 +73,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 1
+levelid = 6
 
 [node name="Level08" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -82,7 +82,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 1
+levelid = 7
 
 [node name="Level09" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -91,7 +91,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 1
+levelid = 8
 
 [node name="Level10" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -100,7 +100,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 1
+levelid = 9
 
 [node name="Level11" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -109,7 +109,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 1
+levelid = 10
 
 [node name="Level12" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -118,7 +118,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 1
+levelid = 11
 
 [node name="UI" type="Control" parent="."]
 margin_right = 40.0

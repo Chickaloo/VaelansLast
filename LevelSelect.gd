@@ -11,16 +11,16 @@ var missionCount  =0
 
 var flags = []
 
-#var DialogueBox = preload("res://objects/dialogue/Dialogue.tscn")
+var DialogueBox = preload("res://dialogue/Dialogue.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#UpgradesButton = get_child(0)
 	#EquipmentButton = get_child(1)
 	
-	# If Upgrades hasn't been unlocked
-	#if global.missionUnlocked[1] == 0:
-	#	UpgradesButton.disabled = true
+	
+	if pd.missionUnlocked[1] == 0:
+		$UI/UpgradeButton.disabled = true
 	
 	# If Equipment hasn't been unlocked
 	#if global.missionUnlocked[2] == 0:
@@ -33,17 +33,17 @@ func _ready():
 			break
 
 	var text = get_child(12).get_child(3)
-	text.text = "Progress: %f \n Stars Unlocked: %d/36"% [((missionCount-1)/float(12)),pd.maxStars]
+	text.text = "Progress: %02.0f" % [(pd.maxStars/.30)] + "%" + "\n Stars Unlocked: %d/30"%[pd.maxStars]
 	#if pd.dialogues[0] == 1:
 		#var d = DialogueBox.instance()
 		#d.dialogue = Dialogues.TutorialText
 	#	add_child(d)
 
+"""
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed:
 			if event.scancode == KEY_R:
-				print("Adding mission")
 				for i in range(pd.missionUnlocked.size()):
 					if pd.missionUnlocked[i] == 0:
 						pd.missionUnlocked[i] = 1
@@ -63,7 +63,7 @@ func _unhandled_input(event):
 						flags[flags.size()-1].queue_free()
 						flags.remove(flags.size()-1)
 						break
-
+"""
 
 func _on_UpgradeButton_pressed():
 	get_tree().change_scene("res://UpgradeScene.tscn")

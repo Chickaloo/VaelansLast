@@ -114,6 +114,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if $Canvas/ClickOptions.mode == ClickOptions.FIREBALL:
 			if playerGold >= 10:
 				playerGold -= 10
+				$Canvas/ClickOptions.mode = ClickOptions.SELECTION
 				#var hitbox = AreaHitbox.new(null, null, ENEMY_GROUP, 10, 0, 50, 1, 'res://fireball.jpg')
 				#hitbox.position = get_global_mouse_position()
 				var hitbox = Firestorm.new()

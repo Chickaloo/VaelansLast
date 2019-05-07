@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://EnemyBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/images/structures/enemybaseanim.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -11,6 +12,11 @@ gold = 20
 units = [ "res://EnemyTank.tscn" ]
 numberSpawned = 5
 spawnTime = 3.0
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color( 1, 1, 1, 1 )
+texture = ExtResource( 2 )
+hframes = 10
 
 [node name="Shape" parent="." index="1"]
 shape = SubResource( 1 )

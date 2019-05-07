@@ -27,6 +27,16 @@ var dialogues
 var stages = ["res://scenes/TestWorld.tscn"]
 var stageDescriptions = [
 	"The Prince of Vaelan is finally ready to reclaim his throne. Warm up by slaying the monsters harrassing your Callan hosts.",
+	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out...",
+	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out...",
+	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out...",
+	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out...",
+	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out...",
+	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out...",
+	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out...",
+	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out...",
+	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out...",
+	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out...",
 	"Archers will not be sufficient for the road. Thankfully, there are mages to help you out..."
 ]
 
@@ -60,6 +70,7 @@ func resetUpgrades():
 
 func newGame():
 	missionUnlocked = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	#missionUnlocked = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 	missionScores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	missionTimes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	missionStars = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

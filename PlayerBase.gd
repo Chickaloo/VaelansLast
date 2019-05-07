@@ -30,11 +30,11 @@ func startSpawnSelection():
 	var node = scene.instance()
 	add_child(node)
 	
-func spawn(unitScene):
+func spawn(unitScene, unitid = 0):
 	var unit = level.spawn(unitScene)
-	if level.playerGold >= unit.cost:
-		level.playerGold -= unit.cost
-		var st = SpendText.new(unit.cost)
+	if level.playerGold >= pd.unitCosts[unitid]:
+		level.playerGold -= pd.unitCosts[unitid]
+		var st = SpendText.new(pd.unitCosts[unitid])
 		st.rect_global_position = self.global_position
 		get_parent().add_child(st)
 		unit.setInitialPosition(self.position + Vector2(24 * randf(), 24 * randf()))

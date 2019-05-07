@@ -60,10 +60,14 @@ texture = ExtResource( 4 )
 
 [node name="Vignette" type="Sprite" parent="."]
 position = Vector2( 933.113, 615.956 )
-z_index = 4090
+z_index = 500
 texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PortraitBorder" type="Sprite" parent="."]
+visible = false
 position = Vector2( 373.751, 796.525 )
 z_index = 4095
 texture = ExtResource( 6 )
