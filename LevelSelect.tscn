@@ -19,7 +19,7 @@ position = Vector2( -300.583, -129.258 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
-level = "res://TestLevel.tscn"
+level = "res://Level1.tscn"
 
 [node name="Level02" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -27,7 +27,7 @@ position = Vector2( -192.441, -119.039 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
-level = "res://TestLevel.tscn"
+level = "res://Level2.tscn"
 levelid = 1
 
 [node name="Level03" parent="." instance=ExtResource( 3 )]
@@ -37,7 +37,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 2
+levelid = 1
 
 [node name="Level04" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -46,7 +46,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 3
+levelid = 1
 
 [node name="Level05" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -55,7 +55,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 4
+levelid = 1
 
 [node name="Level06" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -64,7 +64,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 5
+levelid = 1
 
 [node name="Level07" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -73,7 +73,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 6
+levelid = 1
 
 [node name="Level08" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -82,7 +82,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 7
+levelid = 1
 
 [node name="Level09" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -91,7 +91,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 8
+levelid = 1
 
 [node name="Level10" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -100,7 +100,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 9
+levelid = 1
 
 [node name="Level11" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -109,7 +109,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 10
+levelid = 1
 
 [node name="Level12" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -118,7 +118,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
 level = "res://TestLevel.tscn"
-levelid = 11
+levelid = 1
 
 [node name="UI" type="Control" parent="."]
 margin_right = 40.0

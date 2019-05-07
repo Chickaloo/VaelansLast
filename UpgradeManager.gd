@@ -45,24 +45,31 @@ func updateMoneyLabel():
 	moneyLabel.text = "Stars: %d/%d" % [pd.stars, pd.maxStars]
 
 func _on_UpgradeArcherButton_pressed():
-	if pd.stars >= pd.unitLevels[0]:
-		pd.stars -= pd.unitLevels[0]
-		upgradeUnit(0)
+	var id = 0
+	if pd.stars >= pd.unitLevels[id]:
+		pd.stars -= pd.unitLevels[id]
+		upgradeUnit(id)
 
 func _on_UpgradeKnightButton_pressed():
 	var id = 1
+	if pd.stars >= pd.unitLevels[id]:
+		pd.stars -= pd.unitLevels[id]
+		upgradeUnit(id)
 	
 func _on_UpgradeMage_pressed():
 	var id = 2
+	if pd.stars >= pd.unitLevels[id]:
+		pd.stars -= pd.unitLevels[id]
+		upgradeUnit(id)
 
 func upgradeUnit(id):
 	pd.unitDamages[id] += 1
 	pd.unitSizes[id] += 1
 	pd.unitHealth[id] += 1
 	pd.unitLevels[id] += 1
-	pd.unitCosts[id] *= 2
+	#pd.unitCosts[id] *= 2
 	get_child(2).get_child(id).get_child(3).text = "%d\n\n%d\n\n%d\n\n%d\n\n%d\n\n%d" % [pd.unitHealth[id], 1, pd.unitDamages[id], pd.unitSizes[id], pd.unitLevels[id], pd.unitCosts[id]]
-	get_child(2).get_child(id).get_child(4).text = "(+1)\n\n\n\n(+1)\n\n(+1)\n\n(+1)\n\n(+%d)" % [pd.unitCosts[0]]
+
 	
 	updateMoneyLabel()
 	pd.writeSaveData()

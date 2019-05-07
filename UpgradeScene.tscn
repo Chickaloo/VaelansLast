@@ -377,15 +377,6 @@ texture = ExtResource( 7 )
 offset = Vector2( 35.5098, 2.77263 )
 hframes = 5
 
-[node name="Spells" type="Panel" parent="UpgradeManager/TabContainer" index="3"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 36.0
-margin_right = -4.0
-margin_bottom = -4.0
-
 [node name="Panel" type="Panel" parent="UpgradeManager" index="3"]
 margin_left = 27.0
 margin_top = 82.0
@@ -424,10 +415,10 @@ tile_data = PoolIntArray( -1, 0, 196608, -65536, 0, 196609, -65535, 0, 196609, -
 [node name="Camera" parent="." index="3"]
 visible = false
 
-[node name="GoldDisplay" parent="Canvas" index="0"]
+[node name="TimeDisplay" parent="Canvas" index="0"]
 visible = false
 
-[node name="TimeDisplay" parent="Canvas" index="1"]
+[node name="GoldDisplay" parent="Canvas" index="1"]
 visible = false
 
 [node name="ClickOptions" parent="Canvas" index="2"]

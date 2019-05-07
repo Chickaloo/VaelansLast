@@ -6,6 +6,8 @@ var duration
 var damage
 var fireball_cooldown
 
+onready var level = get_node('/root/Level')
+
 var IMAGE_CIRCLE = preload("res://assets/images/effects/fireballcircle.png")
 
 func _ready():
@@ -29,13 +31,15 @@ func _process(delta):
 	if fireball_cooldown < 0:
 		var randx = randi()%radius * (((randi()%2)*2)-1)
 		var randy = randi()%radius * (((randi()%2)*2)-1)
-		get_parent().add_child(Fireball.new(self.global_position + Vector2(randx, randy)))
+		level.add_child(Fireball.new(self.global_position + Vector2(randx, randy)))
 		fireball_cooldown = randf()*.66
 	
 	if duration < 0:
 		queue_free()
 	
 class Fireball extends Node2D:
+	
+	onready var level = get_node('/root/Level')
 	
 	var IMAGE_FIREBALL = preload("res://assets/images/effects/fireballanim.png")
 	var IMAGE_FIREBALL_SHADOW = preload("res://assets/images/effects/shadow.png")
@@ -89,21 +93,23 @@ class Fireball extends Node2D:
 			
 		if smoketimer < 0:
 			var s = Smoke.new(fireball_sprite.global_position)
-			get_parent().get_parent().add_child(s)
+			level.add_child(s)
 			smoketimer = .01
 		
 		if dest.y - fireball_sprite.global_position.y < 10:
-			var hitbox = AreaHitbox.new(null, null, 'enemy', 4, 0, 50, 1, '')
+			var hitbox = AreaHitbox.new(null, null, 'enemyUnit', 1, 0, 20, 1, '')
 			hitbox.global_position = dest
-			get_parent().get_parent().add_child(hitbox)
+			level.add_child(hitbox)
 			var e = Explosion.new(dest + Vector2(0, -10))
-			get_parent().get_parent().add_child(e)
+			level.add_child(e)
 			for i in range(randi()%10 + 5):
 				var d = Debris.new(dest)
-				get_parent().get_parent().add_child(d)
+				level.add_child(d)
 			queue_free()
 		
 class Smoke extends Sprite:
+	onready var level = get_node('/root/Level')
+	
 	var IMAGE_SMOKE_TEXTURE = preload("res://assets/images/effects/shadow.png")
 	var color
 	var alpha

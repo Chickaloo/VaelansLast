@@ -4,7 +4,7 @@
 [ext_resource path="res://Tank/PlayerTank.gd" type="Script" id=2]
 [ext_resource path="res://assets/images/units/knightanim.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
 
 [sub_resource type="CircleShape2D" id=2]
@@ -13,13 +13,13 @@ radius = 114.438
 
 [node name="Tank" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-maxHealth = 20.0
+maxHealth = 60.0
 walkSpeed = 30.0
 attackRadius = 30.0
 aggroRadius = 120.0
 cost = 10
 attackRate = 1.0
-damage = 4.0
+damage = 2.0
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 1.5, 1.5 )
@@ -27,7 +27,7 @@ texture = ExtResource( 3 )
 hframes = 5
 
 [node name="Shape" parent="." index="1"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="DetectionRange" parent="." index="2"]
 searchGroup = "enemy"

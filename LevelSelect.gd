@@ -20,7 +20,8 @@ func _ready():
 	
 	
 	if pd.missionUnlocked[1] == 0:
-		$UI/UpgradeButton.disabled = true
+		pass
+		#$UI/UpgradeButton.disabled = true
 	
 	# If Equipment hasn't been unlocked
 	#if global.missionUnlocked[2] == 0:

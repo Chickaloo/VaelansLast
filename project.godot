@@ -79,6 +79,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://EnemyUnit.gd"
 }, {
+"base": "AreaHitbox",
+"class": "FireballHitbox",
+"language": "GDScript",
+"path": "res://FireballHitbox.gd"
+}, {
 "base": "Sprite",
 "class": "Firestorm",
 "language": "GDScript",
@@ -103,6 +108,11 @@ _global_script_classes=[ {
 "class": "Level",
 "language": "GDScript",
 "path": "res://Level.gd"
+}, {
+"base": "GroupUnit",
+"class": "Mage",
+"language": "GDScript",
+"path": "res://Mage.gd"
 }, {
 "base": "GroupUnit",
 "class": "PlayerArcher",
@@ -159,11 +169,13 @@ _global_script_class_icons={
 "DirectHitbox": "",
 "EnemyBase": "",
 "EnemyUnit": "",
+"FireballHitbox": "",
 "Firestorm": "",
 "Flag": "",
 "Globals": "",
 "GroupUnit": "",
 "Level": "",
+"Mage": "",
 "PlayerArcher": "",
 "PlayerBase": "",
 "PlayerUnit": "",

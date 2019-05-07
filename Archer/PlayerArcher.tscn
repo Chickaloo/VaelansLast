@@ -14,7 +14,7 @@ radius = 161.279
 [node name="PlayerArcher" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 maxHealth = 5.0
-walkSpeed = 40.0
+walkSpeed = 60.0
 attackRadius = 150.0
 aggroRadius = 200.0
 cost = 10
@@ -24,7 +24,7 @@ attackRate = 1.0
 hitboxSpeed = 600.0
 hitboxSize = 1.0
 hitboxDuration = 1.0
-damage = 3.0
+damage = 1.0
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 1.5, 1.5 )

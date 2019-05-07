@@ -8,6 +8,7 @@ const PLAYER_GROUP = 'player'
 const PLAYER_BASE_GROUP = 'playerBase'
 const BUILD_SITE_GROUP = 'buildSite'
 const GROUP_UNIT_GROUP = 'groupUnit'
+const ENEMY_UNIT_GROUP = 'enemyUnit'
 
 var Dialogue = preload("res://dialogue/Dialogue.tscn")
 var Results = preload("res://ResultsScreen.tscn")
@@ -88,17 +89,11 @@ func _ready():
 	enemyBaseCount = len(get_tree().get_nodes_in_group(ENEMY_BASE_GROUP))
 	clock = get_child(1)
 	camera = get_child(2)
-	return
-	for i in range(50):
-		#spawn('res://Tank//PlayerTank.tscn').position = Vector2(100, 100)
-		spawn('res://Archer//PlayerArcher.tscn').position = Vector2(300, 300)
-		#spawn('res://EnemyTank.tscn').position = Vector2(200, 200)
 	
 
 	
 func spawn(scenePath):
 	var scene = load(scenePath)
-	print("spawned " + scenePath)
 	var node = scene.instance()
 	add_child(node)
 	return node
@@ -112,9 +107,9 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
 		if $Canvas/ClickOptions.mode == ClickOptions.FIREBALL:
-			if playerGold >= 10:
-				playerGold -= 10
-				$Canvas/ClickOptions.mode = ClickOptions.SELECTION
+			if playerGold >= 30:
+				playerGold -= 30
+
 				#var hitbox = AreaHitbox.new(null, null, ENEMY_GROUP, 10, 0, 50, 1, 'res://fireball.jpg')
 				#hitbox.position = get_global_mouse_position()
 				var hitbox = Firestorm.new()

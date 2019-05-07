@@ -6,6 +6,7 @@ export(int) var gold
 
 func _ready():
 	add_to_group(Level.ENEMY_GROUP)
+	add_to_group(Level.ENEMY_UNIT_GROUP)
 
 func die():
 	level.playerGold += gold

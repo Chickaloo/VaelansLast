@@ -17,6 +17,7 @@ func _init(source, target, targetGroup, damage, speed, radius, duration, spriteP
 	
 	if spritePath:
 		var sprite = Globals.newSprite(radius * 2, radius * 2, spritePath)
+		sprite.name = 'Sprite'
 		add_child(sprite)
 	
 	self.source = source
@@ -29,7 +30,7 @@ func _init(source, target, targetGroup, damage, speed, radius, duration, spriteP
 func _ready():
 	if source:
 		self.position = source.position
-	if target:
+	if is_instance_valid(target):
 		look_at(target.global_position)
 	connect("area_entered", self, 'hit')
 

@@ -6,7 +6,7 @@ export(float) var waitRadius
 export(float) var avoidRadius
 export(String, FILE, '*.tscn') var baseUnit
 export(Array, int) var upgradeCosts
-var unit = [preload("res://Archer/PlayerArcher.tscn"), preload("res://Tank/PlayerTank.tscn"), preload("res://Tank/PlayerTank.tscn")]
+var unit = [preload("res://Archer/PlayerArcher.tscn"), preload("res://Tank/PlayerTank.tscn"), preload("res://Mage.tscn")]
 
 var _level = 0
 var _rotation
@@ -29,7 +29,6 @@ func _ready():
 	for i in range(pd.unitSizes[unitid]):
 		var T = unit[unitid].instance()
 		_units.append(T)
-		print("adding " + str(T))
 		add_child(T)
 		T.baseOffset = Vector2(rand_range(-10, 10), rand_range(-10, 10))
 		T.global_position = self.global_position + T.baseOffset

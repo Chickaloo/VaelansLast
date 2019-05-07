@@ -15,6 +15,7 @@ onready var level = get_node('/root/Level')
 
 func _ready():
 	$Shape.shape.extents = $Sprite.scale * $Sprite.get_texture().get_size() / 2
+	$Shape.shape.extents.x /= $Sprite.hframes
 	_health = maxHealth
 	hpsprite = Sprite.new()
 	hpsprite.set_texture(preload("res://hp.png"))

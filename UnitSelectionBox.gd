@@ -4,7 +4,7 @@ export(String, FILE, '*.tscn') var unit
 export(int) var unitid
 export(String) var unitName
 export(String) var unitCost
-var units = ["res://ArcherGroup.tscn", "res://TankGroup.tscn", "res://TankGroup.tscn"]
+var units = ["res://ArcherGroup.tscn", "res://TankGroup.tscn", "res://MageGroup.tscn"]
 var _active = true
 
 func _ready():
