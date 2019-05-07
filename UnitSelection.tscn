@@ -16,7 +16,7 @@ extents = Vector2( 69.0374, 19.1903 )
 resource_local_to_scene = true
 extents = Vector2( 71.5989, 21.2539 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 resource_local_to_scene = true
 extents = Vector2( 71.0242, 19.3826 )
 
@@ -106,7 +106,7 @@ hframes = 5
 
 [node name="CollisionShape2D" parent="TankSelectionBox3" index="1"]
 position = Vector2( -61.8702, -72.8186 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CostLabel" parent="TankSelectionBox3" index="2"]
 margin_left = -50.0229
