@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 				animationstate = 0
 				sprite.frame = 0
 		
-	if is_instance_valid(_target):
+	if is_instance_valid(_target) and _target is Unit:
 		if _target.global_position.x < self.global_position.x:
 			$Sprite.scale.x = -1.5
 		else:
@@ -85,7 +85,6 @@ func _process(delta: float) -> void:
 			pass
 		else:
 			moveTowards(_target.global_position, delta)
-			
 	else:
 		if get_parent().global_position.x < self.global_position.x:
 			$Sprite.scale.x = -1.5

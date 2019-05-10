@@ -9,7 +9,12 @@ var speed
 var radius
 var duration
 
-func _init(source, target, targetGroup, damage, speed, radius, duration, spritePath):
+var _singleHit
+var _hit = false
+
+func _init(source, target, targetGroup, damage, speed, radius, duration, spritePath, singleHit = false):
+	_singleHit = singleHit
+	
 	var collision = CollisionShape2D.new()
 	collision.shape = CircleShape2D.new()
 	collision.shape.radius = radius
@@ -28,7 +33,7 @@ func _init(source, target, targetGroup, damage, speed, radius, duration, spriteP
 	self.duration = duration
 
 func _ready():
-	if source:
+	if is_instance_valid(source):
 		self.position = source.position
 	if is_instance_valid(target):
 		look_at(target.global_position)
@@ -43,8 +48,11 @@ func _process(delta: float) -> void:
 	for area in inside:
 		hit(area)
 		
-	
 func hit(area):
+	if _singleHit and _hit:
+		return
+	
 	if searchGroup in area.get_groups():
 		area.getHit(self)
 		call_deferred("queue_free")
+		_hit = true

@@ -4,7 +4,7 @@ class_name FireballHitbox
 
 var animTimer = 0
 
-func _init(source, target, damage).(source, target, 'enemy', damage, 50, 10, 1, 'res://assets/images/effects/fireballanim.png'):
+func _init(source, target, damage).(source, target, 'enemy', damage, 50, 10, 1, 'res://assets/images/effects/fireballanim.png', true):
 	$Sprite.hframes = 4
 	$Sprite.scale.x *= 4
 
@@ -24,3 +24,6 @@ func hit(area):
 		var explosion = AreaHitbox.new(source, target, 'enemy', damage, 0, 30, .1, 'res://assets/images/effects/shadow.png')
 		get_parent().add_child(explosion)
 		explosion.global_position = area.global_position
+		var A = Audio.new('res://fireball.wav')
+		#A.volume_db = -10
+		get_node('/root/Level').add_child(A)

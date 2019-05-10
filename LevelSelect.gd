@@ -33,7 +33,7 @@ func _ready():
 		else:
 			break
 
-	var text = get_child(12).get_child(3)
+	var text = get_node('UI').get_child(3)
 	text.text = "Progress: %02.0f" % [(pd.maxStars/.30)] + "%" + "\n Stars Unlocked: %d/30"%[pd.maxStars]
 	#if pd.dialogues[0] == 1:
 		#var d = DialogueBox.instance()

@@ -24,7 +24,7 @@ attackRate = 3.0
 hitboxSpeed = 20.0
 hitboxSize = 20.0
 hitboxDuration = 1.0
-damage = 4.0
+damage = 20.0
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 1.1875, 1.3125 )

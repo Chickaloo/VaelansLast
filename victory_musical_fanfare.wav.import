@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/victory_musical_fanfare.wav-733f0db641e295a3543056b96f226a33.sample"
+
+[deps]
+
+source_file="res://victory_musical_fanfare.wav"
+dest_files=[ "res://.import/victory_musical_fanfare.wav-733f0db641e295a3543056b96f226a33.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

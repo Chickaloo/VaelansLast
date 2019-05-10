@@ -97,7 +97,7 @@ class Fireball extends Node2D:
 			smoketimer = .01
 		
 		if dest.y - fireball_sprite.global_position.y < 10:
-			var hitbox = AreaHitbox.new(null, null, 'enemyUnit', 1, 0, 20, 1, '')
+			var hitbox = AreaHitbox.new(null, null, 'enemy', 10, 0, 20, 1, '')
 			hitbox.global_position = dest
 			level.add_child(hitbox)
 			var e = Explosion.new(dest + Vector2(0, -10))
@@ -149,6 +149,11 @@ class Explosion extends Sprite:
 		vframes = 1
 		time = 1
 		scale = Vector2(.4, .4)
+		
+	func _ready():
+		var A = Audio.new('res://fireball.wav')
+		A.volume_db = -10
+		get_node('/root/Level').add_child(A)
 		
 	func _process(delta):
 		fps -= delta

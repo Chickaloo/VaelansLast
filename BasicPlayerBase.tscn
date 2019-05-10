@@ -7,7 +7,7 @@
 resource_local_to_scene = true
 
 [node name="BasicPlayerBase" instance=ExtResource( 1 )]
-maxHealth = 20.0
+maxHealth = 100.0
 workerSpawnTime = 3.0
 unitSelector = "res://UnitSelection.tscn"
 

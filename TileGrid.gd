@@ -10,11 +10,8 @@ func _ready() -> void:
 		var A = get_tree().get_root().get_node('Level').A
 		for pos in get_used_cells():
 			if get_cell(pos.x, pos.y) == 1:
-				var s = Globals.newSprite(10, 10, 'res://icon.png')
-				get_node('/root/Level').call_deferred('add_child', s)
 				var npos = (map_to_world(pos) + cell_size / 2) * scale
 				npos += position
-				s.global_position = npos
 				#A.add_point(i, Vector3(pos.x, pos.y, 0))
 				A.add_point(i, Vector3(npos.x, npos.y, 0))
 				#A.connect_points(i, i - 21)

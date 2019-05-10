@@ -7,7 +7,7 @@ export(float) var damage
 func _ready():
 	maxHealth *= 1 + level.levelid / 10
 	walkSpeed *= 1 + level.levelid / 10
-	damage *- 1 + level.levelid / 10
+	damage *= 1 + level.levelid / 10
 	_health = maxHealth
 	$Sprite.modulate = Color((1 - float(level.levelid) / 10), 0, 0, 1)
 

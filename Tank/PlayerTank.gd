@@ -24,6 +24,9 @@ func attack(target):
 	attackTimer = attackRate + rand_range(-.2, .2)
 	var hitbox = DirectHitbox.new(self, target, damage)
 	level.add_child(hitbox)
+	var A = Audio.new('res://sword_impact.wav')
+	A.volume_db = -10
+	get_node('/root/Level').add_child(A)
 
 func _process(delta: float) -> void:
 	global_position -= baseOffset

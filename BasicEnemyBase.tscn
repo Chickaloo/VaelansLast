@@ -7,11 +7,11 @@
 resource_local_to_scene = true
 
 [node name="BasicEnemyBase" instance=ExtResource( 1 )]
-maxHealth = 20.0
+maxHealth = 100.0
 gold = 20
 units = [ "res://EnemyTank.tscn" ]
 numberSpawned = 5
-spawnTime = 3.0
+spawnTime = 10.0
 
 [node name="Sprite" parent="." index="0"]
 modulate = Color( 1, 1, 1, 1 )

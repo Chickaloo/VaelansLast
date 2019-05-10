@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/RPG Battle Music - Enemy Attacks! By HeatleyBros.wav-d0ec486b6cfcfc2e20501d942efab279.sample"
+
+[deps]
+
+source_file="res://RPG Battle Music - Enemy Attacks! By HeatleyBros.wav"
+dest_files=[ "res://.import/RPG Battle Music - Enemy Attacks! By HeatleyBros.wav-d0ec486b6cfcfc2e20501d942efab279.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

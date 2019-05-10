@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/victory_cry.wav-02abb886eb87cfe00babfc032e07a978.sample"
+
+[deps]
+
+source_file="res://victory_cry.wav"
+dest_files=[ "res://.import/victory_cry.wav-02abb886eb87cfe00babfc032e07a978.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

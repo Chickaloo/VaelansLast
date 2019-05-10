@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/images/levelselect/worldmap.png" type="Texture" id=1]
 [ext_resource path="res://LevelSelect.gd" type="Script" id=2]
 [ext_resource path="res://Flag.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/fonts/PixelTheme.tres" type="Theme" id=4]
+[ext_resource path="res://Sad City Fantasy Emotional RPG Game Music by HeatleyBros.wav" type="AudioStream" id=5]
 
 [node name="LevelSelect" type="Sprite"]
 position = Vector2( 513.432, 300 )
@@ -36,8 +37,8 @@ position = Vector2( -78.738, -122.085 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
-level = "res://TestLevel.tscn"
-levelid = 1
+level = "res://Level3.tscn"
+levelid = 2
 
 [node name="Level04" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -45,8 +46,8 @@ position = Vector2( 30.9041, -123.1 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
-level = "res://TestLevel.tscn"
-levelid = 1
+level = "res://Level4.tscn"
+levelid = 3
 
 [node name="Level05" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -54,8 +55,8 @@ position = Vector2( 306.024, -168.784 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
-level = "res://TestLevel.tscn"
-levelid = 1
+level = "res://Level5.tscn"
+levelid = 4
 
 [node name="Level06" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -63,8 +64,8 @@ position = Vector2( 173.033, -85.5374 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
-level = "res://TestLevel.tscn"
-levelid = 1
+level = "res://Level6.tscn"
+levelid = 5
 
 [node name="Level07" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -72,8 +73,8 @@ position = Vector2( 29.8888, -54.066 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
-level = "res://TestLevel.tscn"
-levelid = 1
+level = "res://Level7.tscn"
+levelid = 6
 
 [node name="Level08" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -81,8 +82,8 @@ position = Vector2( -159.954, 6.84619 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
-level = "res://TestLevel.tscn"
-levelid = 1
+level = "res://Level8.tscn"
+levelid = 7
 
 [node name="Level09" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -90,8 +91,8 @@ position = Vector2( -196.502, 94.1538 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
-level = "res://TestLevel.tscn"
-levelid = 1
+level = "res://Level9.tscn"
+levelid = 8
 
 [node name="Level10" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -99,28 +100,11 @@ position = Vector2( -21.8866, 151.005 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -10
 z_as_relative = false
-level = "res://TestLevel.tscn"
-levelid = 1
-
-[node name="Level11" parent="." instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 187.245, 115.473 )
-scale = Vector2( 0.5, 0.5 )
-z_index = -10
-z_as_relative = false
-level = "res://TestLevel.tscn"
-levelid = 1
-
-[node name="Level12" parent="." instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 247.143, 41.3632 )
-scale = Vector2( 0.5, 0.5 )
-z_index = -10
-z_as_relative = false
-level = "res://TestLevel.tscn"
+level = "res://Level10.tscn"
 levelid = 1
 
 [node name="UI" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -156,6 +140,11 @@ margin_bottom = 203.0
 theme = ExtResource( 4 )
 text = "Progress: 0%
 Stars Unlocked: 0/36"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="UI/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="UI/UpgradeButton" to="." method="_on_UpgradeButton_pressed"]

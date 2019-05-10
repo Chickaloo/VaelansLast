@@ -15,8 +15,9 @@ var sprite
 var attackfps = .4
 
 func _init():
+	damage = 2
 	maxHealth *= 1 + pd.unitLevels[unitid] / 5
-	damage *= 1 + pd.unitLevels[unitid] / 5
+	damage *= 1 + float(pd.unitLevels[unitid]) / 5
 	walkSpeed *= 1 + pd.unitLevels[unitid] / 5
 	sprite = get_child(0)
 	basescale = 1.5
@@ -27,9 +28,11 @@ func attack(target):
 	sprite.frame = 3
 	attackTimer = attackRate + rand_range(-.2, .2)
 	global_position += baseOffset
-	var hitbox = AreaHitbox.new(self, target, Level.ENEMY_GROUP, damage, hitboxSpeed, hitboxSize, hitboxDuration, 'res://arrow.png')
+	var hitbox = AreaHitbox.new(self, target, Level.ENEMY_GROUP, damage, hitboxSpeed, hitboxSize, hitboxDuration, 'res://arrow.png', true)
 	level.add_child(hitbox)
 	global_position -= baseOffset
+	var A = Audio.new('res://arrow_flying.wav')
+	get_node('/root/Level').add_child(A)
 
 func _process(delta: float) -> void:
 	global_position -= baseOffset

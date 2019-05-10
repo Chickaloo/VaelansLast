@@ -28,6 +28,8 @@ func pressed(button):
 	if mode == PAUSED:
 		get_tree().paused = true
 		get_child(PAUSED).text = 'Unpause'
+	else:
+		get_tree().paused = false
 	
 	if mode == BUILDING:
 		get_node('/root/Level').spawn('res://BuildSiteMarker.tscn')

@@ -11,6 +11,7 @@ var _spawnTimer = 0
 var fps = .085
 
 func _ready():
+	spawnTime *= 1 - (float(level.levelid) / 20)
 	add_to_group(Level.ENEMY_GROUP)
 	add_to_group(Level.ENEMY_BASE_GROUP)
 

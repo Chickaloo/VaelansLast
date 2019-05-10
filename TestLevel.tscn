@@ -31,15 +31,12 @@ position = Vector2( 131.165, 493.679 )
 [node name="BasicEnemyBase" parent="." index="5" instance=ExtResource( 4 )]
 position = Vector2( 964.563, 475.769 )
 numberSpawned = 3
-spawnTime = 10.0
 
 [node name="BasicEnemyBase2" parent="." index="6" instance=ExtResource( 4 )]
 position = Vector2( 878.064, 482.999 )
 numberSpawned = 3
-spawnTime = 10.0
 
 [node name="BasicEnemyBase3" parent="." index="7" instance=ExtResource( 4 )]
 position = Vector2( 875.848, 97.4038 )
 numberSpawned = 3
-spawnTime = 10.0
 

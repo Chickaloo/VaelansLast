@@ -120,6 +120,18 @@ func _unhandled_input(event: InputEvent) -> void:
 			buildSite.position = get_global_mouse_position()
 		elif $Canvas/ClickOptions.mode == ClickOptions.SELECTION:
 			add_child(SelectionField.new())
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			# zoom in
+			if event.button_index == BUTTON_WHEEL_UP:
+				$Camera.zoom.x -= .1
+				$Camera.zoom.y -= .1
+				# call the zoom function
+				# zoom out
+			if event.button_index == BUTTON_WHEEL_DOWN:
+				$Camera.zoom.x += .1
+				$Camera.zoom.y += .1
+				# call the zoom function
 			
 func baseDestroyed(base):
 	if PLAYER_BASE_GROUP in base.get_groups():
@@ -137,4 +149,10 @@ func baseDestroyed(base):
 			var results = Results.instance()
 			results.set_values(time_now-time_start, playerGold, bronzetimethreshold, silvertimethreshold, goldtimethreshold, maxtime, levelid)
 			get_child(2).add_child(results)
+			var A = Audio.new('res://victory_cry.wav')
+			A.pause_mode = PAUSE_MODE_PROCESS
+			get_node('/root/Level').add_child(A)
+			A = Audio.new('res://victory_musical_fanfare.wav')
+			A.pause_mode = PAUSE_MODE_PROCESS
+			get_node('/root/Level').add_child(A)
 			

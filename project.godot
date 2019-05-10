@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://AreaHitbox.gd"
 }, {
+"base": "AudioStreamPlayer2D",
+"class": "Audio",
+"language": "GDScript",
+"path": "res://Audio.gd"
+}, {
 "base": "Actor",
 "class": "Base",
 "language": "GDScript",
@@ -158,6 +163,7 @@ _global_script_class_icons={
 "Actor": "",
 "ActorMoving": "",
 "AreaHitbox": "",
+"Audio": "",
 "Base": "",
 "BuildSiteMarker": "",
 "ClickOptions": "",

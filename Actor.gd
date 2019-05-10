@@ -50,6 +50,12 @@ func getHit(hitbox):
 			die()
 	
 func die():
+	var R = randf()
+	if R < .5:
+		level.add_child(Audio.new('res://ondeath_grunt.wav'))
+	else:
+		level.add_child(Audio.new('res://oof.wav'))
+	
 	_isDead = true
 	
 	#for i in range(randi()%10 + 4):

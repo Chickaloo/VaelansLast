@@ -26,8 +26,8 @@ func _process(delta: float) -> void:
 			var distance = global_position.distance_to(closest.global_position)
 			if distance <= attackRadius:
 				_buildTimer += delta
-				if _buildTimer >= buildTime and level.playerGold >= damage:
-					level.playerGold -= damage
+				if _buildTimer >= buildTime:
+					#level.playerGold -= damage
 					var hitbox = DirectHitbox.new(self, closest, damage)
 					level.add_child(hitbox)
 					_canBuild = false
